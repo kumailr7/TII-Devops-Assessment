@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-game
+  labels:
+  {{- include "hextris-prod.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.game.replicas }}
+  selector:
+    matchLabels:
+      app: hextris
+    {{- include "hextris-prod.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        app: hextris
+      {{- include "hextris-prod.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+      - env:
+        - name: KUBERNETES_CLUSTER_DOMAIN
+          value: {{ quote .Values.kubernetesClusterDomain }}
+        image: {{ .Values.game.hextris.image.repository }}:{{ .Values.game.hextris.image.tag
+          | default .Chart.AppVersion }}
+        name: hextris
+        ports:
+        - containerPort: 80
+        resources: {}

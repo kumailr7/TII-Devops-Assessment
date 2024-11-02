@@ -1,0 +1,59 @@
+DS_Store
+.idea/*
+*~
+*.swp
+*.swo
+
+# Node.js / JavaScript
+node_modules/
+package-lock.json
+yarn.lock
+
+# Docker
+*.log
+
+# Kubernetes
+
+
+# Helm
+
+
+# Terraform
+*.tfstate
+*.tfstate.backup
+.terraform/
+.terraform.lock.hcl
+
+# OS generated files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Local environment files
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+
+# Backup files
+*~
+*.bak
+*.tmp
+
+# IDE and editor folders
+.idea/
+.vscode/
+*.iml
+
+# Python specific (if applicable)
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Miscellaneous
+*.pem
+*.key

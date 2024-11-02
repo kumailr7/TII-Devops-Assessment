@@ -1,0 +1,26 @@
+services:
+  hextris:
+    image: kumail7/hextris-demo:v1
+    container_name: hextris-dockers
+    networks:
+      - hextris-network
+    ports:
+      - "8004:80"
+
+  nginx:
+    container_name: hextris-nginx
+    restart: unless-stopped
+    image: nginx:alpine
+    ports:
+        - 80:80
+        - 443:443
+    networks:
+        - hextris-network
+    volumes:
+        - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+        - ./nginx/certs:/etc/nginx/certs
+    depends_on:
+        - hextris
+networks:
+  hextris-network:
+    driver: bridge

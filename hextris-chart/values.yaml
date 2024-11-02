@@ -1,0 +1,17 @@
+game:
+  hextris:
+    image:
+      repository: kumail7/hextris-demo
+      tag: latest
+  replicas: 2
+kubernetesClusterDomain: cluster.local
+service:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  type: ClusterIP
+tls:
+  Crt: "< base 64 encoded value >"
+  Key: "< base 64 encoded value >"
+  
