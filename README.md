@@ -271,8 +271,9 @@ cat hextris-prod.local-key.pem | base64 -w 0
 
 - Check the Shell Script configuration: [K8-Setup.sh](K8s/k8s-setup.sh)
 
-- A video respentation of running thr script and access the domain 
+- A video respentation of running this script and accessing the domain shown below 
 
+[Kubernetes Deployment Walkthrough](https://imgur.com/a/aODYc7m)
 
 
 ## 5. Converting the mainfests into Helm Charts
