@@ -1,4 +1,4 @@
-Hextris (TII - Techinal Assesment)
+Hextris (TII - Technical Assessment)
 ==========
 
 <img src="images/twitter-opengraph.png" width="100px"><br>
