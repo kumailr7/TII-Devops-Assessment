@@ -303,7 +303,7 @@ helm create hextris-chart
 
 - Check for the configurations: [Helm Charts](hextris-chart)
 
-- Update the `values.yaml`  with Base64 encoded values of `hextris-prod.local`  [Base64 Encode](#note-base-encode-the-secrets-to-inject-in-secretsyml-of-helm-charts)
+- Update the `values.yaml`  with Base64 encoded values of `hextris-prod.local`  [Base64 Encode](#note-base-encode-the-secrets-to-inject-in-secretsyml-of-k8s)
 
 - The `Crt` vaule would be value of `hextris-prod.local.pem` and `Key` value would value of `hextris-prod.local-key.pem` in values.yml
 
