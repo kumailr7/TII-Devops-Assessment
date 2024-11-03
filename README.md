@@ -43,8 +43,8 @@ The repository is organized as follows:
 ├── nginx/
 │   ├── nginx.conf                # NGINX configuration file
 │   ├── certs/                    # Directory for SSL certificates
-│       ├── hextris.local.pem     # SSL certificate for local domain
-│       └── hextris.local-key.pem # SSL key for local domain
+│       ├── hextris.local.pem     # SSL certificate for local domain (should be placed here)
+│       └── hextris.local-key.pem # SSL key for local domain (should be placed here)
 | dockerfile                      # application dockerfile
 | terraform-minikube              # Terraform files to create minikube cluster 
 | makefile                        # Automate process for terrfrom init , plan and apply 
@@ -270,7 +270,7 @@ mkcert hextris-prod.local
 - The tls.crt vaule would be value of `hextris-prod.local.pem` and tls.key value would value of `hextris-prod.local-key.pem` 
 
 
-  ### **NOTE: Base Encode the Secrets to inject in `secrets.yml` of helm charts**
+  ### **NOTE: Base Encode the Secrets to inject in `secrets.yml` of K8s**
 
 - Base encoded both the vaules using this command
 ```
@@ -283,7 +283,7 @@ cat hextris-prod.local-key.pem | base64 -w 0
 
 ## 4. Deploying on Kubernetes Cluster
 
-- Created Bash Script to handle the Namespace creeation , Ingress Creation check , Deployment of all mainfests and adding minikube ip to the `/etc/hosts`
+- Created Bash Script to handle the Namespace creation , Ingress Creation check , Deployment of all mainfests and adding minikube ip to the `/etc/hosts`
 
 - Check the Shell Script configuration: [K8-Setup.sh](K8s/k8s-setup.sh)
 
