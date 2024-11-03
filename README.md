@@ -5,7 +5,7 @@ Hextris (TII - Techinal Assesment)
 
 An addictive puzzle game inspired by Tetris. Play it [https://hextris.github.io/hextris](https://hextris.github.io/hextris).
 
-This Game can be deployed in 3 ways:
+This Game has been deployed in 3 ways:
 
 - **[Docker Container with nginx and SSL](#1-docker-container-with-nginx-and-ssl)**
 - **[Deloying on Kubernetes Cluster](#4-deploying-on-kubernetes-cluster)**
@@ -19,7 +19,19 @@ This project demonstrates the deployment of the Hextris game using Docker, Kuber
 1. **Docker**: Ensure Docker is installed on your system. [Docker Installation Guide](https://docs.docker.com/get-docker/)
 2. **Docker Compose**: Make sure Docker Compose is available. [Docker Compose Installation Guide](https://docs.docker.com/compose/install/)
 3. **Mkcert**: Used for generating local development SSL certificates. [Mkcert Installation Guide](https://github.com/FiloSottile/mkcert)
-4. **Minikube:**
+4. **Minikube**: A tool that makes it easy to run Kubernetes locally.  
+   [Minikube Installation Guide](https://minikube.sigs.k8s.io/docs/start/)
+
+5. **Kubectl**: The command-line tool for interacting with Kubernetes clusters.  
+   - You can install kubectl by following the official guide:  
+     [Install and Set Up kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+
+6. **Helm**: A package manager for Kubernetes, useful for managing Kubernetes applications.  
+   - Install Helm by following the official guide:  
+     [Helm Installation Guide](https://helm.sh/docs/intro/install/)
+
+7. **Terraform**: To Manage Infrastrcture as code , Managing Creation of kubernetes cluster
+    - To install Terraform detailed installation instructions can be found in the [Terraform Installation Guide](https://learn.hashicorp.com/tutorials/terraform/install-cli).
 
 ## Project Structure
 
@@ -27,17 +39,18 @@ The repository is organized as follows:
 
 ```plaintext
 .
-├── docker-compose.yml          # Docker Compose configuration 
+├── docker-compose.yml            # Docker Compose configuration 
 ├── nginx/
-│   ├── nginx.conf              # NGINX configuration file
-│   ├── certs/                  # Directory for SSL certificates
-│       ├── hextris-prod.local.pem   # SSL certificate for local domain
-│       └── hextris-prod.local-key.pem # SSL key for local domain
-| dockerfile                 # application dockerfile
-| terraform-minikube         # Terraform files to create minikube cluster 
-| makefile                   # Automate process for terrfrom init , plan and apply 
-| K8s                        # Kubernetes manifests files 
-| hextris-chart              # Helm chart for deploying on K8s
+│   ├── nginx.conf                # NGINX configuration file
+│   ├── certs/                    # Directory for SSL certificates
+│       ├── hextris.local.pem     # SSL certificate for local domain
+│       └── hextris.local-key.pem # SSL key for local domain
+| dockerfile                      # application dockerfile
+| terraform-minikube              # Terraform files to create minikube cluster 
+| makefile                        # Automate process for terrfrom init , plan and apply 
+| K8s                             # Kubernetes manifests files 
+| hextris-chart                   # Helm chart for deploying on K8s
+| src                             # Application code 
 ```
 
 
@@ -317,7 +330,7 @@ helm install hextris hextris-chart -n hextris
 
 ![Helm Chart Deployed](output_images/Helm_output.png)
 
-- To check if helm chart is there in kuberentes cluster, run thid command 
+- To check if helm chart is there in kuberentes cluster, run this command 
 ```
 helm list -A 
 ```

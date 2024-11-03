@@ -1,1 +1,2 @@
-hextris.io
+hextris.local  (Used for Docker Containers)
+hextris-prod.local (Used For Kubernetes and Helm)
