@@ -166,7 +166,10 @@ volumes:
 
 ![Hextris page](output_images/Hextris_page.png)
 
-**NOTE: Certs and Key are not pushed to Github as its not best pratice**
+## Important Notes
+
+- **Security**: Certificates and keys are not pushed to GitHub as it's not recommended to share sensitive information publicly.
+- **Code Changes**: The source code has been modified to make it more assessment-oriented.
 
 
 ## 2. Creating Local Development Cluster via Terraform 
