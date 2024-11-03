@@ -73,7 +73,7 @@ server {
 }
 ```
 
-- Check the `nginx.conf` for the configuration [nginx.conf](nginx.conf)
+- Check the `nginx.conf` for the configuration [nginx.conf](nginx/nginx.conf)
 
 - The configuation is updated with SSL but later will see how to get SSl certs for the local domain.
 
@@ -103,7 +103,7 @@ docker push kumail7/hextris-demo:v1
 
 - Updated the docker compose file with proper image name and tag
 
-- Check the `docker-compose.yml` for the configuration [docker-compose.yml](.dockerfile)
+- Check the `docker-compose.yml` for the configuration [docker-compose.yml](docker-compose.yml)
 
 - Running the docker compose 
 
